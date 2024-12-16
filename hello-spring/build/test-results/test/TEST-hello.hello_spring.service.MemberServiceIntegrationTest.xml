@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="hello.hello_spring.service.MemberServiceIntegrationTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-12-10T07:31:21" hostname="jhchoiui-MacBookPro-2.local" time="0.33">
+  <properties/>
+  <testcase name="회원가입()" classname="hello.hello_spring.service.MemberServiceIntegrationTest" time="0.33"/>
+  <system-out><![CDATA[16:31:20.101 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [hello.hello_spring.service.MemberServiceIntegrationTest]: MemberServiceIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+16:31:20.148 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration hello.hello_spring.HelloSpringApplication for test class hello.hello_spring.service.MemberServiceIntegrationTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.0)
+
+2024-12-10T16:31:20.327+09:00  INFO 37411 --- [hello-spring] [    Test worker] h.h.s.MemberServiceIntegrationTest       : Starting MemberServiceIntegrationTest using Java 17.0.12 with PID 37411 (started by jhchoi in /Users/jhchoi/Documents/GitHub/spring/hello-spring)
+2024-12-10T16:31:20.328+09:00  INFO 37411 --- [hello-spring] [    Test worker] h.h.s.MemberServiceIntegrationTest       : No active profile set, falling back to 1 default profile: "default"
+2024-12-10T16:31:20.566+09:00  INFO 37411 --- [hello-spring] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-10T16:31:20.587+09:00  INFO 37411 --- [hello-spring] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17 ms. Found 1 JPA repository interface.
+2024-12-10T16:31:20.739+09:00  INFO 37411 --- [hello-spring] [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-10T16:31:20.757+09:00  INFO 37411 --- [hello-spring] [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.2.Final
+2024-12-10T16:31:20.769+09:00  INFO 37411 --- [hello-spring] [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-12-10T16:31:20.876+09:00  INFO 37411 --- [hello-spring] [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-10T16:31:20.886+09:00  INFO 37411 --- [hello-spring] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-12-10T16:31:20.934+09:00  INFO 37411 --- [hello-spring] [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:tcp://localhost/~/test user=SA
+2024-12-10T16:31:20.935+09:00  INFO 37411 --- [hello-spring] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-12-10T16:31:20.957+09:00  INFO 37411 --- [hello-spring] [    Test worker] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-12-10T16:31:21.237+09:00  INFO 37411 --- [hello-spring] [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-10T16:31:21.238+09:00  INFO 37411 --- [hello-spring] [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-10T16:31:21.394+09:00  WARN 37411 --- [hello-spring] [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-10T16:31:21.403+09:00  INFO 37411 --- [hello-spring] [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2024-12-10T16:31:21.604+09:00  INFO 37411 --- [hello-spring] [    Test worker] h.h.s.MemberServiceIntegrationTest       : Started MemberServiceIntegrationTest in 1.343 seconds (process running for 1.84)
+Hibernate: select m1_0.id,m1_0.name from member m1_0 where m1_0.name=?
+Hibernate: insert into member (name,id) values (?,default)
+join = 70ms
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

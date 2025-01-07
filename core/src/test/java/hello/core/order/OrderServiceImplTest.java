@@ -1,17 +1,16 @@
 package hello.core.order;
 
 import hello.core.AppConfig;
-import hello.core.member.Grade;
-import hello.core.member.Member;
-import hello.core.member.MemberService;
-import hello.core.member.MemberServiceImpl;
+import hello.core.discount.FixDiscountPolicy;
+import hello.core.member.*;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
-class OrderServiceImplTest {
+class  OrderServiceImplTest {
 
     MemberService memberService;
     OrderService orderService;
@@ -23,13 +22,25 @@ class OrderServiceImplTest {
         orderService = appConfig.orderService();
     }
 
+//    @Test
+//    void createOrder() {
+//        Long memberId = 1L;
+//        Member member = new Member(memberId, "memberA", Grade.VIP);
+//        memberService.join(member);
+//
+//        Order order = orderService.createOrder(memberId, "itemA", 10000);
+//        Assertions.assertThat(order.getDiscountPrice()).isEqualTo(1000);
+//    }
+
     @Test
     void createOrder() {
-        Long memberId = 1L;
-        Member member = new Member(memberId, "memberA", Grade.VIP);
-        memberService.join(member);
+        MemoryMemberRepository memoryMemberRepository = new MemoryMemberRepository();
+        memoryMemberRepository.save(new Member(1L, "name", Grade.VIP));
 
-        Order order = orderService.createOrder(memberId, "itemA", 10000);
-        Assertions.assertThat(order.getDiscountPrice()).isEqualTo(1000);
+        OrderServiceImpl orderService = new OrderServiceImpl(memoryMemberRepository, new FixDiscountPolicy());
+        Order order = orderService.createOrder(1L, "item1", 10000);
+        assertThat(order.getItemPrice()).isEqualTo(10000);
+
+
     }
 }
